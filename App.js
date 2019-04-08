@@ -2,22 +2,36 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import DeckList from './components/DeckList'
 import {MaterialIcons} from '@expo/vector-icons'
+import {createStackNavigator,createAppContainer } from 'react-navigation'
+
+import Home from './components/Home'
+import AddDeck from './components/AddDeck'
+
 
 const AppContext = React.createContext();
 
-export default class App extends React.Component {
+ class App extends React.Component {
   render() {
     return (
+      <AppContext.Provider>
       <View style={styles.container}>
-        <View style={styles.addContainer}>
-          <TouchableOpacity onPress={console.log('pressed')}>
-           <MaterialIcons style={styles.addBtn}name="add-to-photos" size={50} />
-          </TouchableOpacity>
-        </View>
+        <Home navigation={this.props.navigation} />
       </View>
+      </AppContext.Provider>
     );
   }
 }
+
+const Stack = createStackNavigator({
+  Home: {
+    screen: Home,
+  },
+  AddDeck: {
+    screen: AddDeck,
+  }
+})
+
+export default createAppContainer(Stack);
 
 const styles = StyleSheet.create({
   container: {
