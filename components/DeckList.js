@@ -17,7 +17,5 @@ const styles = StyleSheet.create({
   flex:1,
   justifyContent: 'center',
   alignContent: 'center'
- },
-  deckTitle
-  })
+ },})
 export default DeckList
