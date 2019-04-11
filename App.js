@@ -1,22 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, StatusBar } from 'react-native';
 import DeckList from './components/DeckList'
 import {MaterialIcons} from '@expo/vector-icons'
 import {createStackNavigator,createAppContainer } from 'react-navigation'
 
 import Home from './components/Home'
 import AddDeck from './components/AddDeck'
-
+import DeckView from './components/DeckView'
+import NewCard from './components/NewCard'
+import CardsList from './components/CardsList'
 
 const AppContext = React.createContext();
 
- class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
-      <AppContext.Provider>
-      <View style={styles.container}>
-        <Home navigation={this.props.navigation} />
-      </View>
+      <AppContext.Provider state={this.state}>
+       <StatusBar/>
+        <View style={styles.container}>
+          <Home navigation={this.props.navigation} />
+        </View>
       </AppContext.Provider>
     );
   }
@@ -28,6 +31,15 @@ const Stack = createStackNavigator({
   },
   AddDeck: {
     screen: AddDeck,
+  },
+  NewCard: {
+    screen: NewCard,
+  },
+  CardsList: {
+    screen: CardsList
+  },
+  DeckView: {
+    screen: DeckView,
   }
 })
 

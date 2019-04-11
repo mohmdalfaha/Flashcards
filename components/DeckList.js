@@ -1,21 +1,21 @@
 import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import {ScrollView, Text, StyleSheet} from 'react-native'
 
+import Deck from './Deck'
 
 class DeckList extends React.Component{
   render(){
     return(
-    <View style={styles.deckContainer}>
-      <Text>Deck</Text>
-    </View>
+    <ScrollView contentContainerStyle={styles.deckContainer}>
+        <Deck />
+    </ScrollView>
       )
   }
 }
 
 const styles = StyleSheet.create({
   deckContainer:{
-  flex:1,
-  justifyContent: 'center',
+  justifyContent: 'space-between',
   alignContent: 'center'
  },})
 export default DeckList
