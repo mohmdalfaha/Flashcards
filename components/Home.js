@@ -19,7 +19,9 @@ export default class Home extends React.Component {
       </View>
     );
   }
+
 }
+
 
 const styles = StyleSheet.create({
   container: {

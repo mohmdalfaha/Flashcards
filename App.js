@@ -10,17 +10,17 @@ import DeckView from './components/DeckView'
 import NewCard from './components/NewCard'
 import CardsList from './components/CardsList'
 
-const AppContext = React.createContext();
+//const AppContext = React.createContext();
 
 class App extends React.Component {
   render() {
     return (
-      <AppContext.Provider state={this.state}>
-       <StatusBar/>
+      //<AppContext.Provider state={this.state}>
         <View style={styles.container}>
+         <StatusBar backgroundColor={"#192a56"}/>
           <Home navigation={this.props.navigation} />
         </View>
-      </AppContext.Provider>
+      //</AppContext.Provider>
     );
   }
 }

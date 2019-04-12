@@ -5,11 +5,13 @@ import {withNavigation} from 'react-navigation'
 
 class Deck extends React.Component{
   render(){
+    const {title, cards} = this.props.data
     return(
     <ScrollView contentContainerStyle={styles.container}>
       <TouchableOpacity style={styles.deckContainer} onPress={() => this.props.navigation.navigate('DeckView')}>
            <MaterialCommunityIcons style={styles.addBtn} name="cards" size={50} />
-           <Text style={{paddingTop: 15}}>Deck 1</Text>
+           <Text style={{paddingTop: 15}}>{title}</Text>
+           <Text >{cards.length}</Text>
       </TouchableOpacity>
     </ScrollView>
     )

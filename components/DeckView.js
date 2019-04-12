@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
   deckContainer:{
   flex:1,
   justifyContent: 'center',
-  alignContent: 'center'
+  alignContent: 'center',
+  fontSize:30,
  },})
 

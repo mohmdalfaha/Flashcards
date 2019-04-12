@@ -28,25 +28,24 @@ export default class CardsList extends PureComponent {
                   style={styles.card}
                     friction={14}
                     perspective={1000}
-                    flipHorizontal={false}
-                    flipVertical={true}
+                    flipHorizontal={true}
+                    flipVertical={false}
                     flip={false}
                     onFlipEnd={(isFlipEnd)=>{console.log('isFlipEnd', isFlipEnd)}}
                   >
                     <View style={styles.face}>
                         <Text> Why React is cool</Text>
                     </View>
-                    <View style={styles.back}>
-                        <Text> Because It's Reactive lol `{this.state.index}`!!</Text>
-                        <TouchableOpacity>
-                <Text> Correct </Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                <Text> Incorrect </Text>
-                </TouchableOpacity>
-                    </View>
-                  </FlipCard>
-                        <Text style={{ color: "whitesmoke" }}>{`${this.state.index}`}</Text>
+                <View style={styles.back}>
+                    <Text> Because It's Reactive and so fast na hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh `{this.state.index}`!!</Text>
+                    <TouchableOpacity>
+                        <Text> Correct </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Text> Incorrect </Text>
+                    </TouchableOpacity>
+                </View>
+            </FlipCard>
             </View>
         );
     };
@@ -68,8 +67,7 @@ export default class CardsList extends PureComponent {
                     renderItem={this._renderItem}
                     sliderWidth={Dimensions.get("window").width}
                     firstItem={2}
-                    layout={'stack'}
-                    loop={true}
+                    layout={'tinder'}
                 />
                 <Text style={{ color: "#192a56" }}>{`Active index: ${this.state.index}`}</Text>
             </View>
@@ -97,9 +95,19 @@ const styles = StyleSheet.create({
   face: {
     flex:1,
     backgroundColor: "#192a56",
+    color: 'white',
+    paddingLeft: 50,
+    paddingRight: 28,
+    textAlign:'center',
+    paddingTop: 28,
   },
   back: {
     flex:1,
     backgroundColor: "#fbc531",
+    color: 'white',
+    paddingLeft: 50,
+    paddingRight: 28,
+    textAlign:'center',
+    paddingTop: 28,
   },
 })
