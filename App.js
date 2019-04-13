@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, StatusBar } from 'react-native';
 import DeckList from './components/DeckList'
-import {MaterialIcons} from '@expo/vector-icons'
 import {createStackNavigator,createAppContainer } from 'react-navigation'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+import reducer from './reducers'
 
 import Home from './components/Home'
 import AddDeck from './components/AddDeck'
@@ -10,17 +12,17 @@ import DeckView from './components/DeckView'
 import NewCard from './components/NewCard'
 import CardsList from './components/CardsList'
 
-//const AppContext = React.createContext();
+const store = createStore(reducer)
 
 class App extends React.Component {
   render() {
     return (
-      //<AppContext.Provider state={this.state}>
+      <Provider store={store}>
         <View style={styles.container}>
          <StatusBar backgroundColor={"#192a56"}/>
           <Home navigation={this.props.navigation} />
         </View>
-      //</AppContext.Provider>
+      </Provider>
     );
   }
 }
