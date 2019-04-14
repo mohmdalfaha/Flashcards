@@ -11,10 +11,10 @@ export const getDecks = (decks) => {
   }
 }
 
-export const addDeck = (deck) => {
+export const addDeck = (title) => {
   return {
     type: ADD_DECK,
-          deck
+          title
   }
 }
 
